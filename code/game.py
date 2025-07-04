@@ -3,7 +3,7 @@
 import pygame
 import pygame as pg
 
-from code.const import WIN_H, WIN_W
+from code.const import WIN_H, WIN_W, MENU_OPTION
 from code.menu import Menu
 
 
@@ -16,9 +16,13 @@ class Game:
 
         while True:
             menu = Menu(self.window)
-            menu.run()
+            menu_return = menu.run()
 
-            for event in pg.event.get():
-                if event.type == pg.QUIT:
-                    pg.quit()
-                    quit()
+            if menu_return == MENU_OPTION[1]:
+                pass
+
+            elif menu_return == MENU_OPTION[2]:
+                pygame.quit()
+                quit()
+            else:
+                pass
