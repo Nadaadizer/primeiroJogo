@@ -4,6 +4,7 @@ import pygame
 import pygame as pg
 
 from code.const import WIN_H, WIN_W, MENU_OPTION
+from code.level import Level
 from code.menu import Menu
 
 
@@ -18,8 +19,9 @@ class Game:
             menu = Menu(self.window)
             menu_return = menu.run()
 
-            if menu_return == MENU_OPTION[1]:
-                pass
+            if menu_return == MENU_OPTION[0]:
+                level = Level(self.window, "level1", menu_return)
+                leve_return = level.run()
 
             elif menu_return == MENU_OPTION[2]:
                 pygame.quit()
