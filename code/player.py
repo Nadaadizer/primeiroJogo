@@ -8,7 +8,8 @@ class Player(Entity):
         self.xp = 0
         self.level = 1
         self.next_xp = 100
-        self.attack_damage = 5
+        self.attack_damage = 9
+        self.stamina = 20
 
     def handle_input(self, pressed_key):
         if pressed_key[pygame.K_d]:
@@ -23,6 +24,7 @@ class Player(Entity):
             self.level += 1
             self.next_xp = int(self.next_xp * 1.5)
             print(f"Nível UP! Agora você está no nível {self.level}.")
+
 
     def move(self):
         pass

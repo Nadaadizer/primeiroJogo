@@ -19,9 +19,6 @@ class Entity(ABC):
     def update_behavior(self, rect):
         pass
 
-    def move_enemy(self, player_rect):
-        pass
-
     def update_rect(self):
         self.rect.x = int(self.float_x)
         self.rect.y = int(self.float_y)

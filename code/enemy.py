@@ -12,11 +12,11 @@ class Enemy(Entity):
         self.last_attack_time = 0
 
         if name == 'skeleton':
-            self.base_hp = 70
+            self.base_hp = 30
             self.base_damage = 3
             self.xp_reward = 15
         elif name == 'werewolf':
-            self.base_hp = 150
+            self.base_hp = 55
             self.base_damage = 7
             self.xp_reward = 30
 
