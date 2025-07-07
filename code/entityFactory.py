@@ -1,6 +1,7 @@
 from code.const import WIN_W, WIN_H
 from code.enemy import Enemy
-
+from code.player import Player
+from code.background import Background
 
 class EntityFactory:
 
@@ -8,13 +9,8 @@ class EntityFactory:
     def get_entity(entity_name: str, position=(0, 0)):
         match entity_name:
             case 'level1bg':
-                from code.background import Background
-                list_bg = []
-                for i in range(5):
-                    list_bg.append(Background(f'level1bg{i}', (0, 0)))
-                return list_bg
+                return [Background(f'level1bg{i}', (i * WIN_W, 0)) for i in range(5)]
             case 'player':
-                from code.player import Player
                 return Player('player', (WIN_W / 2 - 50, WIN_H - 75))
         return None
 

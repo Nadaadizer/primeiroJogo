@@ -1,19 +1,13 @@
-# W
 import pygame
 
 WIN_W = 576
 WIN_H = 324
 
-# M
-MENU_OPTION = ('Play',
-               'Score',
-               'Exit')
+MENU_OPTION = ('Play', 'Upgrade', 'Exit')
 
-# C
 COLOR_WHITE = (255, 255, 255)
 COLOR_ORANGE = (232, 112, 32)
 
-# e
 ENTITY_SPEED = {
     'level1bg0': 0,
     'level1bg1': 1,
@@ -26,12 +20,22 @@ ENTITY_SPEED = {
 }
 
 EVENT_ENEMY = pygame.USEREVENT + 1
+SPAWN_TIME = 2000
 
 ENEMY_VISION_RANGE = {
-    'skeleton': 150,
-    'werewolf': 250
+    'skeleton': 200,
+    'werewolf': 250,
 }
 
-# s
-
-SPAWN_TIME = 2000
+ENEMY_STATS = {
+    'skeleton': {
+        'hp': 30,
+        'damage': 3,
+        'xp': 15
+    },
+    'werewolf': {
+        'hp': 55,
+        'damage': 7,
+        'xp': 30
+    }
+}
