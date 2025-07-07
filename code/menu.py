@@ -36,6 +36,7 @@ class Menu:
     def run(self):
         menu_option = 0
         pygame.mixer_music.load('./asset/Menu.mp3')
+        pygame.mixer_music.set_volume(0.08)
         pygame.mixer_music.play(-1)
 
         while True:
@@ -59,13 +60,13 @@ class Menu:
                     quit()
 
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_DOWN:  # DOWN KEY
+                    if event.key == pygame.K_s:  # DOWN KEY
                         if menu_option < len(MENU_OPTION) - 1:
                             menu_option += 1
                         else:
                             menu_option = 0
 
-                    if event.key == pygame.K_UP:  # UP KEY
+                    if event.key == pygame.K_w:  # UP KEY
                         if menu_option > 0:
                             menu_option -= 1
                         else:
